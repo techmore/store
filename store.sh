@@ -17,4 +17,4 @@ COPY store /usr/share/nginx/html
 EOF
 
 docker build -t some-content-nginx .
-docker run --name some-nginx -d -p 8081:80 store-nginx
+docker run --name store-nginx -d -p 8081:80 some-content-nginx
