@@ -38,27 +38,55 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
       <h3>Hoodie</h3>
       <p>$9.99</p>
-      <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<!-- PAYPAL BUTTON -->      
+     <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 
   <!-- Identify your business so that you can collect the payments. -->
-  <input type="hidden" name="business" value="kin@kinskards.com">
+  <input type="hidden" name="business" value="herschelgomez@xyzzyu.com">
 
-  <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
-  <input type="hidden" name="cmd" value="_cart">
-  <input type="hidden" name="add" value="1">
+  <!-- Specify a Buy Now button. -->
+  <input type="hidden" name="cmd" value="_xclick">
 
   <!-- Specify details about the item that buyers will purchase. -->
-  <input type="hidden" name="item_name" value="Birthday - Cake and Candle">
-  <input type="hidden" name="amount" value="3.95">
+  <input type="hidden" name="item_name" value="Design">
   <input type="hidden" name="currency_code" value="USD">
 
+  <!-- Provide a drop-down menu option field. -->
+  <input type="hidden" name="on0" value="Type">Design<br />
+  <select name="os0">
+    <option value="Select a type">-- Select a type --</option>
+    <option value="Standard">Striped</option>
+    <option value="Collapsible">Solid</option>
+  </select> <br />
+
+  <!-- Provide a drop-down menu option field with prices. -->
+  <input type="hidden" name="on1" value="Design">Design <br />
+  <select name="os1">
+    <option value="06oz">Striped - $30.00 USD</option>
+    <option value="12oz">Solid - $25.0 USD</option>
+    <option value="36oz">Dots - $20.00 USD</option>
+  </select> <br />
+
+  <!-- Specify the price that PayPal uses for each option. -->
+  <input type="hidden" name="option_index" value="1">
+  <input type="hidden" name="option_select0" value="Striped">
+  <input type="hidden" name="option_amount0" value="30.00">
+  <input type="hidden" name="option_select1" value="Solid">
+  <input type="hidden" name="option_amount1" value="25.00">
+  <input type="hidden" name="option_select2" value="Dots">
+  <input type="hidden" name="option_amount2" value="20.00">
+
   <!-- Display the payment button. -->
-  <input type="image" name="submit"
-    src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
-    alt="Add to Cart">
-  <img alt="" width="1" height="1"
+  <input type="image" name="submit" border="0"
+    src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png"
+    alt="Buy Now">
+  <img alt="" border="0" width="1" height="1"
     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+
 </form>
+      
+<!-- END PAYPAL -->
+      
       
     </div>
     <div class="w3-quarter">
