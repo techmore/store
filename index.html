@@ -17,40 +17,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 </head>
 
 <body>
-<script>
-    // Render the PayPal button
-    paypal.Button.render({
-        // Set your environment
-        env: 'sandbox', // sandbox | production
-        // Specify the style of the button
-        style: {
-            label: 'pay', // checkout | credit | pay
-            size:  'small',    // small | medium | responsive
-            shape: 'pill',     // pill | rect
-            color: 'gold'      // gold | blue | silver
-        },
-        client: {
-            sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
-            production: '<insert production client id>'
-        },
-        payment: function(data, actions) {
-            return actions.payment.create({
-                payment: {
-                    transactions: [
-                        {
-                            amount: { total: '0.01', currency: 'USD' }
-                        }
-                    ]
-                }
-            });
-        },
-        onAuthorize: function(data, actions) {
-            return actions.payment.execute().then(function() {
-                window.alert('Payment Complete!');
-            });
-        }
-    }, '#paypal-button-container');
-</script>
 
 <!-- Sidebar (hidden by default) -->
 <nav class="w3-sidebar w3-bar-block w3-card-2 w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
@@ -75,58 +41,154 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">
     <div class="w3-quarter">
-      <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-      <h3>Hoodie</h3>
+      <img src="https://www.hiddenlegendwinery.com/wp-content/uploads/2014/11/Pure-Honey-Mead-1-200x300.jpg" alt="Sandwich" style="width:100%">
+      <h3>Pure Honey Mead</h3>
+      <p><font size="2">Crafted in the style of a semi-dry table wine, it captures the flavor of honey without being too sweet. Enjoy it by itself or as a complement to dishes like grilled fish, roast pork, and spicy Asian or Mexican. Made exclusively from pure Montana honey. This honey mead is best served at room temperature or slightly chilled.<font></p>
       <p>$9.99</p>
-
-      <div id="paypal-button-container"></div>
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+   <input type="hidden" name="business" value="kin@kinskards.com">
+   <input type="hidden" name="cmd" value="_cart">
+   <input type="hidden" name="add" value="1">
+   <input type="hidden" name="item_name" value="Birthday - Cake and Candle">
+   <input type="hidden" name="amount" value="3.95">
+   <input type="hidden" name="currency_code" value="USD">
+   <input type="image" name="submit"
+     src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+     alt="Add to Cart">
+   <img alt="" width="1" height="1"
+     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+ </form>
       
     </div>
     <div class="w3-quarter">
-      <img src="https://www.w3schools.com/w3images/steak.jpg" alt="Steak" style="width:100%">
-      <h3>Let Me Tell You About This Steak</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <div id="paypal-button-container"></div>
+      <img src="https://www.hiddenlegendwinery.com/wp-content/uploads/2014/11/Dark-Mead-1-200x300.jpg" alt="Steak" style="width:100%">
+      <h3>Dark Mead</h3>
+      <p><font size="2">This robust yet semi-dry honey wine is made from a darkened honey that produces rich tones and clearly defined layers of flavor. Hidden Legend dark honey mead complements heartier meat dishes, wild game, rich ethnic meals, spicy foods, and chocolate. Best served either slightly chilled or at room temperature.</font></p>
+      <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+   <input type="hidden" name="business" value="kin@kinskards.com">
+   <input type="hidden" name="cmd" value="_cart">
+   <input type="hidden" name="add" value="1">
+   <input type="hidden" name="item_name" value="Birthday - Cake and Candle">
+   <input type="hidden" name="amount" value="3.95">
+   <input type="hidden" name="currency_code" value="USD">
+   <input type="image" name="submit"
+     src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+     alt="Add to Cart">
+   <img alt="" width="1" height="1"
+     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+ </form>
     </div>
     <div class="w3-quarter">
-      <img src="https://www.w3schools.com/w3images/cherries.jpg" alt="Cherries" style="width:100%">
-      <h3>Cherries, interrupted</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <div id="paypal-button-container"></div>
+      <img src="https://www.hiddenlegendwinery.com/wp-content/uploads/2014/11/Spiced-Mead-1-200x300.jpg" alt="Cherries" style="width:100%">
+      <h3>Spiced Mead</h3>
+      <p><font size="">Our mead wine maker has taken this festive favorite and created a delightfully modern version that can be heated with a stick of cinnamon, poured over ice, with a sprig of mint, or enjoyed by itself. This honey wine complements turkey or pork, and is best served slightly chilled.<font></p>
+      <<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+   <input type="hidden" name="business" value="kin@kinskards.com">
+   <input type="hidden" name="cmd" value="_cart">
+   <input type="hidden" name="add" value="1">
+   <input type="hidden" name="item_name" value="Birthday - Cake and Candle">
+   <input type="hidden" name="amount" value="3.95">
+   <input type="hidden" name="currency_code" value="USD">
+   <input type="image" name="submit"
+     src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+     alt="Add to Cart">
+   <img alt="" width="1" height="1"
+     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+ </form>
     </div>
     <div class="w3-quarter">
-      <img src="https://www.w3schools.com/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
-      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <div id="paypal-button-container"></div>
+      <img src="https://www.hiddenlegendwinery.com/wp-content/uploads/2014/11/Maple-Mead-1-200x300.jpg" alt="Pasta and Wine" style="width:100%">
+      <h3>Maple Mead</h3>
+      <p>That’s why we’ve blended 100% pure maple syrup with thick, smooth Montana honey. The result is a dark, enchanting flavor, with distinctive maple flourishes in the finish. Enjoy Hidden Legend Maple Mead wine by itself or experiment with meals.</p>
+      <<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+   <input type="hidden" name="business" value="kin@kinskards.com">
+   <input type="hidden" name="cmd" value="_cart">
+   <input type="hidden" name="add" value="1">
+   <input type="hidden" name="item_name" value="Birthday - Cake and Candle">
+   <input type="hidden" name="amount" value="3.95">
+   <input type="hidden" name="currency_code" value="USD">
+   <input type="image" name="submit"
+     src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+     alt="Add to Cart">
+   <img alt="" width="1" height="1"
+     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+ </form>
     </div>
   </div>
   
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <div class="w3-quarter">
-      <img src="https://www.w3schools.com/w3images/popsicle.jpg" alt="Popsicle" style="width:100%">
-      <h3>All I Need Is a Popsicle</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <div id="paypal-button-container"></div>
+      <img src="https://www.hiddenlegendwinery.com/wp-content/uploads/2014/11/Elderberry-Mead-1-200x300.jpg" alt="Popsicle" style="width:100%">
+      <h3>Elderberry Mead</h3>
+      <p><font size="2">This delicious elderberry honey wine has a subtle port-like quality that makes it perfect for sipping and for complementing your favorite chocolate or sharp cheese. Elderberry honey wine was said to be the favorite of Hippocrates (the father of medicine) and the early pioneers of Montana. Best served slightly chilled.<font></p>
+      <<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+   <input type="hidden" name="business" value="kin@kinskards.com">
+   <input type="hidden" name="cmd" value="_cart">
+   <input type="hidden" name="add" value="1">
+   <input type="hidden" name="item_name" value="Birthday - Cake and Candle">
+   <input type="hidden" name="amount" value="3.95">
+   <input type="hidden" name="currency_code" value="USD">
+   <input type="image" name="submit"
+     src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+     alt="Add to Cart">
+   <img alt="" width="1" height="1"
+     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+ </form>
     </div>
     <div class="w3-quarter">
-      <img src="https://www.w3schools.com/w3images/salmon.jpg" alt="Salmon" style="width:100%">
-      <h3>Salmon For Your Skin</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <div id="paypal-button-container"></div>
+      <img src="https://www.hiddenlegendwinery.com/wp-content/uploads/2014/11/Wild-Chokecherry-Mead-1-200x300.jpg" alt="Salmon" style="width:100%">
+      <h3>Wild Chikecherry Mead</h3>
+      <p><font size="2">A wild cherry that grows prolifically throughout Montana, the Chokecherry got its name because it doesn’t sweeten until after a frost. Montanans have used it for years to make their favorite syrup and jelly. This tradition, inspired our winemaker to marry this familiar flavor with local honey wine, and create a true Montana mead wine and the winner of our first gold medal. Serve slightly chilled.<font></p>
+      <<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+   <input type="hidden" name="business" value="kin@kinskards.com">
+   <input type="hidden" name="cmd" value="_cart">
+   <input type="hidden" name="add" value="1">
+   <input type="hidden" name="item_name" value="Birthday - Cake and Candle">
+   <input type="hidden" name="amount" value="3.95">
+   <input type="hidden" name="currency_code" value="USD">
+   <input type="image" name="submit"
+     src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+     alt="Add to Cart">
+   <img alt="" width="1" height="1"
+     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+ </form>
     </div>
     <div class="w3-quarter">
-      <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <div id="paypal-button-container"></div>
+      <img src="https://www.hiddenlegendwinery.com/wp-content/uploads/2014/11/Huckleberry-Mead-1-200x300.jpg" alt="Sandwich" style="width:100%">
+      <h3>Huckleberry Mead</h3>
+      <p><font size="2">Purely seasonal, purely dependent on good berry years, and purely delightful. This fun loving mead wine appears in late fall but immediately transports honey wine lovers back to the very best days of summer. The unique flavor of native Montana huckleberries and honey wine makes it easy to remember that perfect afternoon on a favorite stream of mountain trail. Best served slightly chilled.<font></p>
+       <<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+   <input type="hidden" name="business" value="kin@kinskards.com">
+   <input type="hidden" name="cmd" value="_cart">
+   <input type="hidden" name="add" value="1">
+   <input type="hidden" name="item_name" value="Birthday - Cake and Candle">
+   <input type="hidden" name="amount" value="3.95">
+   <input type="hidden" name="currency_code" value="USD">
+   <input type="image" name="submit"
+     src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+     alt="Add to Cart">
+   <img alt="" width="1" height="1"
+     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+ </form>
     </div>
     <div class="w3-quarter">
-      <img src="https://www.w3schools.com/w3images/croissant.jpg" alt="Croissant" style="width:100%">
-      <h3>Le French</h3>
-      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <div id="paypal-button-container"></div>
+      <img src="https://www.hiddenlegendwinery.com/wp-content/uploads/2014/11/Huckleberry-Mead-1-200x300.jpg" alt="Croissant" style="width:100%">
+      <h3>Huckleberry Mead</h3>
+      <p><font size="2">On a whim, we blended honey wine with peach – magic happened. Turns out we created an exceptionally mellow mead wine, with an easy-to-enjoy, forward fruit taste. <font></p>
+       <<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+   <input type="hidden" name="business" value="kin@kinskards.com">
+   <input type="hidden" name="cmd" value="_cart">
+   <input type="hidden" name="add" value="1">
+   <input type="hidden" name="item_name" value="Birthday - Cake and Candle">
+   <input type="hidden" name="amount" value="3.95">
+   <input type="hidden" name="currency_code" value="USD">
+   <input type="image" name="submit"
+     src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+     alt="Add to Cart">
+   <img alt="" width="1" height="1"
+     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+ </form>
     </div>
   </div>
 
