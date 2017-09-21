@@ -14,7 +14,7 @@ cd ..
 cat <<EOF >> Dockerfile 
 FROM nginx
 COPY store /usr/share/nginx/html
- apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y \
  echo "deb http://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/goaccess.list \
  wget -O - http://deb.goaccess.io/gnugpg.key | sudo apt-key add - \
  apt-get update \
